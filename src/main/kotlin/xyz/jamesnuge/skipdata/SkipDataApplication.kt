@@ -1,4 +1,4 @@
-package xyz.jamesnuge.fantasy
+package xyz.jamesnuge.skipdata
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

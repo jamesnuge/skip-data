@@ -1,12 +1,12 @@
-package xyz.jamesnuge.fantasy.auth
+package xyz.jamesnuge.skipdata.auth
 
 import javax.validation.Valid
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
-import xyz.jamesnuge.fantasy.user.UserAuthService
-import xyz.jamesnuge.fantasy.user.UserSignupError
+import xyz.jamesnuge.skipdata.user.UserAuthService
+import xyz.jamesnuge.skipdata.user.UserSignupError
 
 
 @RestController

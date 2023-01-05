@@ -1,4 +1,4 @@
-package xyz.jamesnuge.fantasy.user
+package xyz.jamesnuge.skipdata.user
 
 import arrow.core.Either
 import arrow.core.left
@@ -10,10 +10,10 @@ import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
-import xyz.jamesnuge.fantasy.auth.JwtResponse
-import xyz.jamesnuge.fantasy.auth.JwtService
-import xyz.jamesnuge.fantasy.auth.UserProfileRequest
-import xyz.jamesnuge.fantasy.repositories.UserRepository
+import xyz.jamesnuge.skipdata.auth.JwtResponse
+import xyz.jamesnuge.skipdata.auth.JwtService
+import xyz.jamesnuge.skipdata.auth.UserProfileRequest
+import xyz.jamesnuge.skipdata.repositories.UserRepository
 import java.util.stream.Collectors
 
 @Service

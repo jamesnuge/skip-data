@@ -1,4 +1,4 @@
-package xyz.jamesnuge.fantasy.auth
+package xyz.jamesnuge.skipdata.auth
 
 import io.jsonwebtoken.ExpiredJwtException
 import io.jsonwebtoken.Jwts

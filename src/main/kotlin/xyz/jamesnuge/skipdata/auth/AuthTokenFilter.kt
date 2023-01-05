@@ -1,4 +1,4 @@
-package xyz.jamesnuge.fantasy.auth
+package xyz.jamesnuge.skipdata.auth
 
 import javax.servlet.FilterChain
 import javax.servlet.http.HttpServletRequest
@@ -10,7 +10,7 @@ import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource
 import org.springframework.util.StringUtils
 import org.springframework.web.filter.OncePerRequestFilter
-import xyz.jamesnuge.fantasy.user.UserProfileDetailsService
+import xyz.jamesnuge.skipdata.user.UserProfileDetailsService
 
 
 class AuthTokenFilter(

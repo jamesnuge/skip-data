@@ -1,4 +1,4 @@
-package xyz.jamesnuge.fantasy.auth
+package xyz.jamesnuge.skipdata.auth
 
 import javax.servlet.ServletException
 import javax.servlet.http.HttpServletRequest

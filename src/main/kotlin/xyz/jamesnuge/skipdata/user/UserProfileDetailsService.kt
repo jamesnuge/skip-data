@@ -1,11 +1,11 @@
-package xyz.jamesnuge.fantasy.user
+package xyz.jamesnuge.skipdata.user
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.core.userdetails.UsernameNotFoundException
 import org.springframework.stereotype.Service
-import xyz.jamesnuge.fantasy.repositories.UserRepository
+import xyz.jamesnuge.skipdata.repositories.UserRepository
 
 // Implementation of the Spring security UserDetailsService
 @Service
