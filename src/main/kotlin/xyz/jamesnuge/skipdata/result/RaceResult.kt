@@ -1,4 +1,4 @@
-package xyz.jamesnuge.skipdata.model
+package xyz.jamesnuge.skipdata.result
 
 import java.time.LocalDate
 import javax.persistence.Entity
