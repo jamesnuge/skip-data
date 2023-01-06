@@ -1,1 +1,1 @@
-rootProject.name = "fantasy"
+rootProject.name = "skip-data"

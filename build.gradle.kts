@@ -10,9 +10,9 @@ plugins {
 }
 
 flyway {
-	url = "jdbc:postgresql:fantasy"
+	url = "jdbc:postgresql:skip-data"
 	locations = arrayOf("classpath:db/migrations")
-	user = "fantasy.league"
+	user = "skip.data"
 	password = "password"
 }
 

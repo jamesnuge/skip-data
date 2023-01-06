@@ -1,11 +1,11 @@
 version: '3.3'
 services:
   db:
-    container_name: fantasy-db
+    container_name: skip-data-db
     image: postgres:13.2
     restart: always
     environment:
-      POSTGRES_USER: fantasy.league
+      POSTGRES_USER: skip.data
       POSTGRES_PASSWORD: password
       POSTGRES_HOST_AUTH_METHOD: trust
     ports:
