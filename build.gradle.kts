@@ -41,7 +41,8 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("io.jsonwebtoken:jjwt:0.9.1")
-	implementation("io.arrow-kt:arrow-core:1.0.1")
+	implementation("io.arrow-kt:arrow-core:1.1.2")
+	implementation("org.flywaydb:flyway-core:6.4.3")
 
 	runtimeOnly("org.postgresql:postgresql")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")

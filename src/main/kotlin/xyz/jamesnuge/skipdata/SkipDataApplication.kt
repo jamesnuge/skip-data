@@ -4,8 +4,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class FantasyApplication
+class SkipDataApplication
 
 fun main(args: Array<String>) {
-	runApplication<FantasyApplication>(*args)
+	runApplication<SkipDataApplication>(*args)
 }

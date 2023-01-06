@@ -25,7 +25,7 @@ class RaceResultSeeder(
         listOf("QLD", "NSW", "ACT", "SA", "VIC", "NT", "TAS", "WA").forEach {
             for (i in 1..10) {
                 raceResultRepository.save(RaceResult(
-                    date = getRandomDate(),
+                    datetime = getRandomDate(),
                     result = getRandomResultTime(),
                     location = it,
                     temperature = getRandomTemperature(),

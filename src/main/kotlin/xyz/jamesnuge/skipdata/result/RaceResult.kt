@@ -11,7 +11,7 @@ data class RaceResult(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
-    val date: LocalDate,
+    val datetime: LocalDate,
     val result: Long,
     val location: String,
     val temperature: Long,
