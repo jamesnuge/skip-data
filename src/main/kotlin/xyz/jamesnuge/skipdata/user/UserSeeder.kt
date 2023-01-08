@@ -21,7 +21,7 @@ class UserSeeder(
     }
 
     override fun run(args: ApplicationArguments?) {
-        if (!userRepository.existsByEmail("test@test.com")) {
+        if (!userRepository.existsByEmail("skip@data.com")) {
             logger.info("Bootstrapping test user")
             userRepository.save(UserProfile(
                 email = "skip@data.com",

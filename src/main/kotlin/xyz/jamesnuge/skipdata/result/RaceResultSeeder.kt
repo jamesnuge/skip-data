@@ -22,15 +22,19 @@ class RaceResultSeeder(
     }
 
     override fun run(args: ApplicationArguments?) {
-        listOf("QLD", "NSW", "ACT", "SA", "VIC", "NT", "TAS", "WA").forEach {
-            for (i in 1..10) {
-                raceResultRepository.save(RaceResult(
-                    datetime = getRandomDate(),
-                    result = getRandomResultTime(),
-                    location = it,
-                    temperature = getRandomTemperature(),
-                    humidity = getRandomHumidity()
-                ))
+        if (raceResultRepository.count() == 0L) {
+            listOf("QLD", "NSW", "ACT", "SA", "VIC", "NT", "TAS", "WA").forEach {
+                for (i in 1..10) {
+                    raceResultRepository.save(
+                        RaceResult(
+                            datetime = getRandomDate(),
+                            result = getRandomResultTime(),
+                            location = it,
+                            temperature = getRandomTemperature(),
+                            humidity = getRandomHumidity()
+                        )
+                    )
+                }
             }
         }
     }
