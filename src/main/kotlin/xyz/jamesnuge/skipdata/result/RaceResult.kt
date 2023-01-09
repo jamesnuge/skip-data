@@ -8,6 +8,7 @@ import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.Table
 
+// TODO: Updated class to contain new fields
 @Entity
 data class RaceResult(
     @Id
