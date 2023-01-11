@@ -7,12 +7,17 @@ plugins {
 	kotlin("jvm") version "1.6.21"
 	kotlin("plugin.spring") version "1.6.21"
 	kotlin("plugin.jpa") version "1.6.21"
+	application
+}
+
+application {
+	mainClass.set("xyz.jamesnuge.skipdata.SkipDataApplicationKt")
 }
 
 flyway {
-	url = "jdbc:postgresql:skip-data"
-	locations = arrayOf("classpath:db/migrations")
-	user = "skip.data"
+	url = "jdbc:postgresql:skipdata"
+	locations = arrayOf("classpath:db/migration")
+	user = "skipdata"
 	password = "password"
 }
 

@@ -25,11 +25,19 @@ class RaceResultService(
 }
 
 fun RaceResult.withRank(temp: Long, humidity: Long): RankedRaceResult = RankedRaceResult(
-        this.id!!,
-        this.datetime,
-        this.result,
-        this.location,
-        this.temperature,
-        this.humidity,
-        abs(temp - this.temperature) + abs(humidity - this.humidity)
-    )
+    this.id!!,
+    this.datetime,
+    this.location,
+    this.temperature,
+    this.humidity,
+    this.altitude,
+    this.trackTemperature,
+    this.trackmeter,
+    this.sixtyFeetTime,
+    this.threeThirtyFeetTime,
+    this.sixSixtyFeetTime,
+    this.sixSixtyFeetSpeed,
+    this.quarterMileTime,
+    this.quarterMileSpeed,
+    abs(temp - this.temperature) + abs(humidity - this.humidity)
+)

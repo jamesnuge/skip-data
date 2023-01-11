@@ -9,10 +9,10 @@ CREATE TABLE race_result(
     altitude               BIGINT NOT NULL,
     track_temperature      BIGINT NOT NULL,
     trackmeter             BIGINT NOT NULL,
-    sixty_feet_time        BIGINT NOT NULL,
-    three_thirty_feet_time BIGINT NOT NULL,
-    six_sixty_feet_time    BIGINT NOT NULL,
-    six_sixty_feet_speed   BIGINT NOT NULL,
-    quarter_mile_time      BIGINT NOT NULL,
-    quarter_mile_speed     BIGINT NOT NULL
+    sixty_feet_time        NUMERIC NOT NULL,
+    three_thirty_feet_time NUMERIC NOT NULL,
+    six_sixty_feet_time    NUMERIC NOT NULL,
+    six_sixty_feet_speed   NUMERIC NOT NULL,
+    quarter_mile_time      NUMERIC NOT NULL,
+    quarter_mile_speed     NUMERIC NOT NULL
 )
