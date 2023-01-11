@@ -31,7 +31,7 @@ class JwtService(
 
     fun generateJwtToken(subject: String, expiryInMs: Long = jwtExpirationInMs.toLong()): String = Jwts.builder().setSubject(subject)
             .setIssuedAt(Date.from(Instant.now()))
-            .setExpiration(Date.from(Instant.now().plusMillis(expiryInMs)))
+//            .setExpiration(Date.from(Instant.now().plusMillis(expiryInMs)))
             .signWith(SignatureAlgorithm.HS512, jwtSecret)
             .compact()
 

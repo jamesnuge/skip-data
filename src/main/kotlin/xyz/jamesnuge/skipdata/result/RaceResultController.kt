@@ -17,7 +17,7 @@ class RaceResultController(private val raceResultService: RaceResultService) {
 
     @GetMapping
     @RequestMapping("/match")
-    fun findBestMatch(@RequestParam temperature: Long, @RequestParam humidity: Long): List<RankedRaceResult> {
-        return raceResultService.findBestResult(temperature, humidity)
+    fun findBestMatch(@RequestParam temperature: Long?, @RequestParam humidity: Long?, @RequestParam trackTemperature: Long?, @RequestParam trackmeter: Long?): List<RankedRaceResult> {
+        return raceResultService.findBestResult(temperature, humidity, trackTemperature, trackmeter)
     }
 }
