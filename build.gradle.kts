@@ -53,6 +53,8 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.security:spring-security-test")
 	testImplementation("org.mockito.kotlin:mockito-kotlin:4.0.0")
+	testImplementation("io.kotlintest:kotlintest-core:3.4.2")
+	testImplementation("io.kotlintest:kotlintest-extensions:3.4.2")
 }
 
 tasks.withType<KotlinCompile> {

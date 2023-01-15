@@ -22,6 +22,10 @@ class RaceResultService(
         return raceResultRepository.findAll().map { it.withRank(temp, humidity, trackTemperature, trackmeter) }
             .sortedBy { it.rank }
     }
+
+    fun saveResult(result: RaceResult) {
+        raceResultRepository.save(result)
+    }
 }
 
 fun RaceResult.withRank(temp: Long?, humidity: Long?, trackTemperature: Long?, trackmeter: Long?): RankedRaceResult {
