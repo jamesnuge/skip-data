@@ -14,7 +14,7 @@ import java.time.LocalDate
 import java.time.Instant
 import java.time.ZoneOffset
 
-ExtendWith(MockitoExtension::class)
+@ExtendWith(MockitoExtension::class)
 class RaceResultServiceTest {
 
     companion object {
