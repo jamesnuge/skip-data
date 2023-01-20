@@ -1,11 +1,13 @@
 package xyz.jamesnuge.skipdata.result
 
+import io.kotlintest.shouldBe
 import org.junit.jupiter.api.extension.ExtendWith
 import org.junit.jupiter.api.Test
 import org.mockito.junit.jupiter.MockitoExtension
 import org.mockito.Mock
 import org.mockito.kotlin.whenever
 import org.mockito.InjectMocks
+import xyz.jamesnuge.skipdata.location.Location
 import xyz.jamesnuge.skipdata.repositories.RaceResultRepository
 import java.util.concurrent.ThreadLocalRandom
 import java.math.BigDecimal
@@ -33,25 +35,35 @@ class RaceResultServiceTest {
         val raceResult = generateRandomRaceResult()
         val raceResult2 = generateRandomRaceResult()
         whenever(raceResultRepository.findAll()).thenReturn(listOf(raceResult, raceResult2))
-        val rankedResults = raceResultService.findBestResult(raceResult.temperature, raceResult.humidity, raceResult.trackTemperature, raceResult.trackmeter)
-        assertEquals(rankedResults, listOf())
+        val rankedResults = raceResultService.findBestResult(
+            raceResult.temperature,
+            raceResult.humidity,
+            raceResult.trackTemperature,
+            raceResult.trackmeter
+        )
+        rankedResults shouldBe with(raceResult) {
+            listOf(
+                withRank(temperature, humidity, trackTemperature, trackmeter),
+                raceResult2.withRank(temperature, humidity, trackTemperature, trackmeter)
+            )
+        }
     }
-
-fun generateRandomRaceResult(): RaceResult =
+    fun generateRandomRaceResult(): RaceResult =
         RaceResult(
-                datetime = getRandomDate(),
-                location = "location",
-                temperature = getRandomTemperature(),
-                humidity = getRandomHumidity(),
-                altitude = 2001,
-                trackmeter = ThreadLocalRandom.current().nextLong(0, 600),
-                trackTemperature = ThreadLocalRandom.current().nextLong(50, 150),
-                sixtyFeetTime = randomBigDecimal(0.080, 1.200),
-                threeThirtyFeetTime = randomBigDecimal(2.300, 4.000),
-                sixSixtyFeetTime = randomBigDecimal(3.300, 5.000),
-                quarterMileTime = randomBigDecimal(5.300, 8.000),
-                sixSixtyFeetSpeed = ThreadLocalRandom.current().nextLong(180, 220),
-                quarterMileSpeed = ThreadLocalRandom.current().nextLong(220, 280),
+            id = ThreadLocalRandom.current().nextLong(),
+            datetime = getRandomDate(),
+            location = Location(1L, "", 200L),
+            temperature = getRandomTemperature(),
+            humidity = getRandomHumidity(),
+            altitude = 2001,
+            trackmeter = ThreadLocalRandom.current().nextLong(0, 600),
+            trackTemperature = ThreadLocalRandom.current().nextLong(50, 150),
+            sixtyFeetTime = randomBigDecimal(0.080, 1.200),
+            threeThirtyFeetTime = randomBigDecimal(2.300, 4.000),
+            sixSixtyFeetTime = randomBigDecimal(3.300, 5.000),
+            quarterMileTime = randomBigDecimal(5.300, 8.000),
+            sixSixtyFeetSpeed = ThreadLocalRandom.current().nextLong(180, 220),
+            quarterMileSpeed = ThreadLocalRandom.current().nextLong(220, 280),
         )
 
 

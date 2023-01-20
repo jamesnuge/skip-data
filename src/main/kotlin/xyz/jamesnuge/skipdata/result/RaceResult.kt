@@ -1,13 +1,10 @@
 package xyz.jamesnuge.skipdata.result
 
+import xyz.jamesnuge.skipdata.location.Location
 import xyz.jamesnuge.skipdata.repositories.RaceResultRepository
 import java.math.BigDecimal
 import java.time.LocalDate
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
-import javax.persistence.Table
+import javax.persistence.*
 
 @Entity
 data class RaceResult(
@@ -15,10 +12,11 @@ data class RaceResult(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
     val datetime: LocalDate,
-    val location: String,
+    @OneToOne
+    @JoinColumn(name = "location_id")
+    val location: Location,
     val temperature: Long,
     val humidity: Long,
-    val altitude: Long,
     val trackTemperature: Long,
     val trackmeter: Long,
     val sixtyFeetTime: BigDecimal,
@@ -32,10 +30,9 @@ data class RaceResult(
 data class RankedRaceResult(
     val id: Long,
     val datetime: LocalDate,
-    val location: String,
+    val location: Location,
     val temperature: Long,
     val humidity: Long,
-    val altitude: Long,
     val trackTemperature: Long,
     val trackmeter: Long,
     val sixtyFeetTime: BigDecimal,

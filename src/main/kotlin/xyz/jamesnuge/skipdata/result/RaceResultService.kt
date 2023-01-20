@@ -39,7 +39,6 @@ fun RaceResult.withRank(temp: Long?, humidity: Long?, trackTemperature: Long?, t
         this.location,
         this.temperature,
         this.humidity,
-        this.altitude,
         this.trackTemperature,
         this.trackmeter,
         this.sixtyFeetTime,
