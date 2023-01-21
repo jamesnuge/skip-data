@@ -23,11 +23,12 @@ class LocationService(private val locationRepository: LocationRepository) {
         }
     }
 
-    fun createLocation(location: Location) {
+    fun createLocation(location: Location): Location {
         if (location.id != null) {
             throw IllegalStateException("Cannot create location with an id")
         } else {
             locationRepository.save(location)
+            return location
         }
     }
 }
