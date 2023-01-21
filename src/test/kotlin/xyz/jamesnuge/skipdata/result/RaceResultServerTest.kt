@@ -55,7 +55,6 @@ class RaceResultServiceTest {
             location = Location(1L, "", 200L),
             temperature = getRandomTemperature(),
             humidity = getRandomHumidity(),
-            altitude = 2001,
             trackmeter = ThreadLocalRandom.current().nextLong(0, 600),
             trackTemperature = ThreadLocalRandom.current().nextLong(50, 150),
             sixtyFeetTime = randomBigDecimal(0.080, 1.200),

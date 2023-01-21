@@ -37,6 +37,7 @@ fun RaceResult.withRank(temp: Long?, humidity: Long?, trackTemperature: Long?, t
         this.id!!,
         this.datetime,
         this.location,
+        this.chassisSetup,
         this.temperature,
         this.humidity,
         this.trackTemperature,

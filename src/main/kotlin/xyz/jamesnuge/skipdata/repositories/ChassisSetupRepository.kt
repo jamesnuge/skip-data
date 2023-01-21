@@ -1,8 +1,7 @@
 package xyz.jamesnuge.skipdata.repositories
 
 import org.springframework.data.jpa.repository.JpaRepository
+import xyz.jamesnuge.skipdata.chassis.ChassisSetup
 import xyz.jamesnuge.skipdata.location.Location
 
-interface LocationRepository: JpaRepository<Location, Long> {
-    fun findByName(name: String): Location?
-}
+interface ChassisSetupRepository: JpaRepository<ChassisSetup, Long>

@@ -1,5 +1,6 @@
 package xyz.jamesnuge.skipdata.result
 
+import xyz.jamesnuge.skipdata.chassis.ChassisSetup
 import xyz.jamesnuge.skipdata.location.Location
 import xyz.jamesnuge.skipdata.repositories.RaceResultRepository
 import java.math.BigDecimal
@@ -11,10 +12,13 @@ data class RaceResult(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
-    val datetime: LocalDate,
     @OneToOne
     @JoinColumn(name = "location_id")
     val location: Location,
+    @OneToOne
+    @JoinColumn(name = "chassis_setup_id")
+    val chassisSetup: ChassisSetup,
+    val datetime: LocalDate,
     val temperature: Long,
     val humidity: Long,
     val trackTemperature: Long,
@@ -31,6 +35,7 @@ data class RankedRaceResult(
     val id: Long,
     val datetime: LocalDate,
     val location: Location,
+    val chassisSetup: ChassisSetup,
     val temperature: Long,
     val humidity: Long,
     val trackTemperature: Long,
